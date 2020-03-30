@@ -45,26 +45,26 @@ function closeButton(e) {
 }
 
 function processKeys(e) {
-    if (e.keyCode == 27) {
-        closeButton();
+    if (e.keyCode === 27) {
+        closeButton(e);
     }
-    
-    if (e.keyCode == 37) {
+
+    if (e.keyCode === 37) {
         currentId -= 1;
         if (currentId > 0) {
             const prevImg = document.querySelector(`[data-id="${currentId}"]`);
             modalImage.setAttribute("src", prevImg.dataset.source);
-        }else{
+        } else {
             currentId = 1;
         }
     }
-    if (e.keyCode == 39) {
-        currentId +=1;
-        
+    if (e.keyCode === 39) {
+        currentId += 1;
+
         if (currentId < images.length) {
             const nextImg = document.querySelector(`[data-id="${currentId}"]`);
             modalImage.setAttribute("src", nextImg.dataset.source);
-        }else{
+        } else {
             currentId = images.length - 1;
         }
     }
